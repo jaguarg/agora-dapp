@@ -1,0 +1,10 @@
+{
+  "description": "Agora is the decentralised app built on iExec where diverse data sources converge, allowing for the exchange, aggregation, analysis, sharing and more. The agora dApp allows users to instantiate a new Agora, i.e. a repository of protected data.",
+  "license": "MIT",
+  "author": "m0rpheus",
+  "social": {
+    "website": "?",
+    "github": "https://github.com/jaguarg/agora-dapp"
+  },
+  "logo": "logo.png"
+}

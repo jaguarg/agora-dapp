@@ -1,0 +1,34 @@
+{
+  "name": "minipool-dapp",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaguarg/minipool-dapp.git"
+  },
+  "keywords": [
+    "iexec",
+    "dataprotector",
+    "pool"
+  ],
+  "author": "m0rpheus",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jaguarg/agora-dapp/issues"
+  },
+  "homepage": "https://github.com/jaguarg/agora-dapp#readme",
+  "dependencies": {
+    "@iexec/dataprotector": "^0.1.1",
+    "@types/node": "^20.3.3",
+    "ethers": "^5.7.2",
+    "node-fetch": "^2.6.12"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}
