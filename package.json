@@ -26,7 +26,8 @@
     "@iexec/dataprotector": "^0.1.1",
     "@types/node": "^20.3.3",
     "ethers": "^5.7.2",
-    "node-fetch": "^2.6.12"
+    "node-fetch": "^2.6.12",
+    "nvm": "^0.0.4"
   },
   "devDependencies": {
     "typescript": "^4.9.5"

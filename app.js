@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import { ethers } from "ethers";
 import { IExecDataProtector, getWeb3Provider } from '@iexec/dataprotector';
 const MAX_NUMBER_OF_ACCESS = 100000000;
-async function createMiniPool() {
+async function createAgoraSet() {
     let poolConfigArg = process.argv.pop() || "";
     let poolConfig = { "poolName": "", "poolPrivateKey": "", "authorizedUsers": "", "autorizedApps": "" };
     try {
@@ -56,13 +56,12 @@ async function writeResult(secretWalletAddress) {
 }
 (async () => {
     try {
-        let secretWalletAddress = await createMiniPool();
+        let secretWalletAddress = await createAgoraSet();
         writeResult(secretWalletAddress);
     }
     catch (e) {
         // Deal with the fact the chain failed
         console.error(e);
-        throw e;
     }
     // `text` is not available here
 })();
