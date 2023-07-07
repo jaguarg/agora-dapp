@@ -62,6 +62,7 @@ async function writeResult(secretWalletAddress) {
     catch (e) {
         // Deal with the fact the chain failed
         console.error(e);
+        throw e;
     }
     // `text` is not available here
 })();
