@@ -30,7 +30,7 @@ async function createMiniPool() {
         let authorizedApps = poolConfig.autorizedApps.split(',');
         await authorizedUsers.forEach(async (user) => {
             await authorizedApps.forEach(async (app) => {
-                console.log("user", user, "app", app);
+                console.log("Grant access - user", user, "app", app);
                 const grantedAccess = await dataProtector.grantAccess({
                     protectedData: protectedData.address,
                     authorizedApp: app,

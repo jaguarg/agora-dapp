@@ -3,7 +3,7 @@
 # declare the app entrypoint
 ENTRYPOINT="node /src/app.js"
 # declare an image name
-IMG_NAME=ace-tee
+IMG_NAME=minipool
 
 IMG_FROM=${IMG_NAME}:temp-non-tee
 IMG_TO=${IMG_NAME}:tee-debug
