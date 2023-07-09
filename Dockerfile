@@ -1,7 +1,12 @@
 # Starting from a base image supported by SCONE  
-FROM node:16.13.1-alpine3.15
+# FROM node:16.13.1-alpine3.15
+FROM node:16-alpine
 
 RUN node --version
+
+RUN apk add g++ make
+RUN apk add --no-cache python3 py3-pip
+
 # install your dependencies
 RUN mkdir /app && cd /app
 
