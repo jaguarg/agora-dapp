@@ -1,5 +1,5 @@
 # Starting from a base image supported by SCONE  
-FROM node:14-alpine3.11
+FROM node:16.13.1-alpine3.15
 
 RUN node --version
 # install your dependencies

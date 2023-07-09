@@ -4,3 +4,4 @@ result.json
 package-lock.json
 query-scone.sh
 build.log
+install.sh
