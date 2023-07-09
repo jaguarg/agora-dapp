@@ -12,7 +12,7 @@ IMG_TO=${IMG_NAME}:tee-debug
 docker build . -t ${IMG_FROM}
 
 # pull the SCONE curated image corresponding to our base image
-docker pull registry.scontain.com:5050/sconecuratedimages/node:14.4.0-alpine3.11
+docker pull registry.scontain.com:5050/sconecuratedimages/node:16.13.1-alpine3.15
 
 # run the sconifier to build the TEE image based on the non-TEE image
 docker run -it --rm \
