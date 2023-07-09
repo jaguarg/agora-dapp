@@ -28,7 +28,7 @@ docker run -it --rm \
             --host-path=/etc/resolv.conf \
             --binary=/usr/local/bin/node \
             --heap=1G \
-            --dlopen=2 \
+            --dlopen=1 \
             --no-color \
             --verbose \
             --command=${ENTRYPOINT} \
