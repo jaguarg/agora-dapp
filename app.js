@@ -2,9 +2,9 @@ import * as fs from 'fs';
 import { ethers } from "ethers";
 import { IExecDataProtector, getWeb3Provider } from '@iexec/dataprotector';
 const MAX_NUMBER_OF_ACCESS = 100000000;
-async function createAgoraSet() {
+async function createMiniPool() {
     let poolConfigArg = process.argv.pop() || "";
-    let poolConfig = { "poolName": "", "poolPrivateKey": "", "authorizedUsers": "", "autorizedApps": "" };
+    let poolConfig;
     try {
         poolConfig = JSON.parse(poolConfigArg);
         console.log("poolConfig", poolConfig);
@@ -21,15 +21,16 @@ async function createAgoraSet() {
     //1. Create the protected data with the pk and pool definition
     try {
         const protectedData = await dataProtector.protectData({
-            name: "Pool " + (poolConfig.poolName || ""),
+            name: "MiniPool " + (poolConfig.poolName || ""),
             data: poolConfig
         });
         console.log("protectedData", protectedData);
         //2. For each authorized app and for each authorized requester grant access 
-        let authorizedUsers = poolConfig.authorizedUsers.split(',');
+        let authorizedUsers = poolConfig.authorizedUsers ? poolConfig.authorizedUsers.split(',') : [];
         let authorizedApps = poolConfig.autorizedApps.split(',');
         await authorizedUsers.forEach(async (user) => {
             await authorizedApps.forEach(async (app) => {
+                console.log("user", user, "app", app);
                 const grantedAccess = await dataProtector.grantAccess({
                     protectedData: protectedData.address,
                     authorizedApp: app,
@@ -56,7 +57,7 @@ async function writeResult(secretWalletAddress) {
 }
 (async () => {
     try {
-        let secretWalletAddress = await createAgoraSet();
+        let secretWalletAddress = await createMiniPool();
         writeResult(secretWalletAddress);
     }
     catch (e) {

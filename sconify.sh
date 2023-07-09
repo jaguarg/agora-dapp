@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # declare the app entrypoint
-ENTRYPOINT="node /app/app.js"
+ENTRYPOINT="node /src/app.js"
 # declare an image name
-IMG_NAME=pool
+IMG_NAME=ace-tee
 
 IMG_FROM=${IMG_NAME}:temp-non-tee
 IMG_TO=${IMG_NAME}:tee-debug
@@ -12,7 +12,7 @@ IMG_TO=${IMG_NAME}:tee-debug
 docker build . -t ${IMG_FROM}
 
 # pull the SCONE curated image corresponding to our base image
-docker pull registry.scontain.com:5050/sconecuratedimages/alpine
+docker pull registry.scontain.com:5050/sconecuratedimages/node:14.4.0-alpine3.11
 
 # run the sconifier to build the TEE image based on the non-TEE image
 docker run -it --rm \

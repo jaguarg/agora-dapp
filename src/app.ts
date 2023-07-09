@@ -6,10 +6,9 @@ import { IExecDataProtector, getWeb3Provider } from '@iexec/dataprotector';
 
 const MAX_NUMBER_OF_ACCESS = 100000000;
 
-async function createAgoraSet(): Promise<string> {
-
+async function createMiniPool(): Promise<string> {
     let poolConfigArg = process.argv.pop() || "";
-    let poolConfig = { "poolName": "", "poolPrivateKey": "", "authorizedUsers": "", "autorizedApps": "" };
+    let poolConfig: MiniPoolConfig ;
 
     try {
         poolConfig = JSON.parse(poolConfigArg);
@@ -30,17 +29,20 @@ async function createAgoraSet(): Promise<string> {
     //1. Create the protected data with the pk and pool definition
     try {
         const protectedData = await dataProtector.protectData({
-            name: "Pool " + (poolConfig.poolName || ""),
+            name: "MiniPool " + (poolConfig.poolName || ""),
             data: poolConfig
         })
 
         console.log("protectedData", protectedData);
 
         //2. For each authorized app and for each authorized requester grant access 
-        let authorizedUsers = poolConfig.authorizedUsers.split(',');
+        let authorizedUsers = poolConfig.authorizedUsers ? poolConfig.authorizedUsers.split(',') : [];
         let authorizedApps = poolConfig.autorizedApps.split(',');
         await authorizedUsers.forEach(async (user) => {
             await authorizedApps.forEach(async (app) => {
+
+                console.log("Grant access - user", user, "app", app)  ;
+
                 const grantedAccess = await dataProtector.grantAccess({
                     protectedData: protectedData.address,
                     authorizedApp: app,
@@ -79,7 +81,7 @@ async function writeResult(secretWalletAddress: string) {
 
 (async () => {
     try {
-        let secretWalletAddress = await createAgoraSet();
+        let secretWalletAddress = await createMiniPool();
         writeResult(secretWalletAddress);
     } catch (e) {
         // Deal with the fact the chain failed
