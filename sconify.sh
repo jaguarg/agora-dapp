@@ -4,9 +4,9 @@
 ENTRYPOINT="node /src/app.js"
 # declare an image name
 IMG_NAME=minipool
-
+VER="0.1.0" 
 IMG_FROM=${IMG_NAME}:temp-non-tee
-IMG_TO=${IMG_NAME}:tee-debug
+IMG_TO=${IMG_NAME}:${VER}-tee-debug
 
 # build the regular non-TEE image
 docker build . -t ${IMG_FROM} --no-cache --progress=plain
