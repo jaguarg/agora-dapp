@@ -1,10 +1,25 @@
 {
-  "description": "Agora is the decentralised app built on iExec where diverse data sources converge, allowing for the exchange, aggregation, analysis, sharing and more. The agora dApp allows users to instantiate a new Agora, i.e. a repository of protected data.",
+  "description": " decentralised app built on iExec where diverse data sources converge, allowing for the exchange, aggregation, analysis, sharing and more. The agora dApp allows users to instantiate a new Agora, i.e. a repository of protected data.",
   "license": "MIT",
-  "author": "m0rpheus",
+  "author": "fran6o",
   "social": {
     "website": "?",
-    "github": "https://github.com/jaguarg/agora-dapp"
+    "github": "https://github.com/jaguarg/minipool-dapp"
   },
-  "logo": "logo.png"
+  "logo": "logo.png",
+  "buyConf": {},
+  "app": {
+    "owner": "0x92077bB7DC20854E54D5a7B2029fBA1CBC030464",
+    "name": "minipool-0.1.0-tee-debug",
+    "type": "DOCKER",
+    "multiaddr": "fran6o/minipool:0.1.0-tee-debug",
+    "checksum": "0xcb75c39c01dc6b2db5e867daab9e3ee685dc5b2d7cb482dca6ad429794e89427",
+    "mrenclave": {
+      "framework": "SCONE",
+      "version": "v5",
+      "entrypoint": "node /app/app.js",
+      "heapSize": 1073741824,
+      "fingerprint": "ea6da962f1c2df4dd7b12716bed1ec80e0fcded34d3f8b1ad621d26329bbbde1"
+    }
+  }
 }
