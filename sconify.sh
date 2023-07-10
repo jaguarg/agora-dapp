@@ -2,10 +2,10 @@
 
 # declare the app entrypoint
 #ENTRYPOINT="node /src/app.js"
-ENTRYPOINT='"ls -la"'
+ENTRYPOINT='ls'
 # declare an image name
 IMG_NAME=minipool
-VER="0.1.11" 
+VER="0.1.12" 
 IMG_FROM=${IMG_NAME}:${VER}-temp-non-tee
 IMG_TO=${IMG_NAME}:${VER}-tee-debug
 
