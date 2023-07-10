@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # declare the app entrypoint
-ENTRYPOINT="node /src/app.js"
+#ENTRYPOINT="node /src/app.js"
+ENTRYPOINT="node --version"
 # declare an image name
 IMG_NAME=minipool
 VER="0.1.1" 
