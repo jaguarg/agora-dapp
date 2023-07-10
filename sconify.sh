@@ -5,7 +5,7 @@ ENTRYPOINT="node /src/app.js"
 # declare an image name
 IMG_NAME=minipool
 VER="0.1.1" 
-IMG_FROM=${IMG_NAME}:temp-non-tee
+IMG_FROM=${IMG_NAME}:${VER}temp-non-tee
 IMG_TO=${IMG_NAME}:${VER}-tee-debug
 
 # build the regular non-TEE image
