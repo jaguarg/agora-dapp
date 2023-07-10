@@ -5,7 +5,7 @@ ENTRYPOINT="node /app/app.js"
 
 # declare an image name
 IMG_NAME=minipool
-VER="0.1.13" 
+VER="0.1.14" 
 IMG_FROM=${IMG_NAME}:${VER}-temp-non-tee
 IMG_TO=${IMG_NAME}:${VER}-tee-debug
 
@@ -20,6 +20,7 @@ docker run -it --rm \
             -v /var/run/docker.sock:/var/run/docker.sock \
             registry.scontain.com:5050/scone-production/iexec-sconify-image:5.7.5-v8 \
             sconify_iexec \
+            --env SCONE_PWD=/app  \
             --name=${IMG_NAME} \
             --from=${IMG_FROM} \
             --to=${IMG_TO} \
