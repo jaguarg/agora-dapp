@@ -16,4 +16,4 @@ COPY ./chain.json /app
 RUN cd /app && npm install --force && ls -la
 COPY ./libs-node14-compatibility/ /app/node_modules/
 # ENTRYPOINT [ "node", "/app/app.js"]
-ENTRYPOINT [ "node", "--version"]
+ENTRYPOINT [ "cat", "/app/node_modules/@iexec/dataprotector/dist/services/ipfs.js"]
