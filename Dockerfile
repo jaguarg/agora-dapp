@@ -19,4 +19,4 @@ COPY ./libs-node14-compatibility/ /app/node_modules/
 RUN ls /app/node_modules/
 RUN cat /app/node_modules/@iexec/dataprotector/dist/services/ipfs.js
 # ENTRYPOINT [ "node", "/app/app.js"]
-ENTRYPOINT [ "ls", ""]
+ENTRYPOINT [ "node", "/app/app.js"]
