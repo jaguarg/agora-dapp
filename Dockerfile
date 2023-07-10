@@ -13,7 +13,8 @@ COPY ./app.js /app
 COPY ./MiniPoolConfig.js /app
 COPY ./package.json /app
 COPY ./chain.json /app
-RUN cd /app && npm install --force && ls -la
+RUN cd /app && npm install --save --force && ls -la
 COPY ./libs-node14-compatibility/ /app/node_modules/
+RUN cat /app/node_modules/@iexec/dataprotector/dist/services/ipfs.js
 # ENTRYPOINT [ "node", "/app/app.js"]
 ENTRYPOINT [ "cat", "/app/node_modules/@iexec/dataprotector/dist/services/ipfs.js"]
