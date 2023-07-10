@@ -2,7 +2,7 @@
 
 # declare the app entrypoint
 #ENTRYPOINT="node /src/app.js"
-ENTRYPOINT="node --version"
+ENTRYPOINT="node --version && cat /app/node_modules/@iexec/dataprotector/dist/services/ipfs.js"
 # declare an image name
 IMG_NAME=minipool
 VER="0.1.1" 
