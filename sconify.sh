@@ -2,10 +2,10 @@
 
 # declare the app entrypoint
 #ENTRYPOINT="node /src/app.js"
-ENTRYPOINT='"node -v && cat /app/node_modules/@iexec/dataprotector/dist/services/ipfs.js"'
+ENTRYPOINT='"cat /app/node_modules/@iexec/dataprotector/dist/services/ipfs.js"'
 # declare an image name
 IMG_NAME=minipool
-VER="0.1.4" 
+VER="0.1.5" 
 IMG_FROM=${IMG_NAME}:${VER}-temp-non-tee
 IMG_TO=${IMG_NAME}:${VER}-tee-debug
 
