@@ -1,5 +1,5 @@
 # Starting from a base image supported by SCONE  
-FROM node:14-alpine3.11
+FROM node:16.13.1-alpine3.15-scone5.7.0
 
 RUN node --version
 
@@ -14,9 +14,6 @@ COPY ./MiniPoolConfig.js /app
 COPY ./package.json /app
 COPY ./chain.json /app
 RUN cd /app && npm install --save --force 
-RUN cd /app && ls -la
 COPY ./libs-node14-compatibility/ /app/node_modules/
-RUN ls /app/node_modules/
-RUN cat /app/node_modules/@iexec/dataprotector/dist/services/ipfs.js
 # ENTRYPOINT [ "node", "/app/app.js"]
 ENTRYPOINT [ "node", "/app/app.js"]

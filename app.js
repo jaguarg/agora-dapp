@@ -1,6 +1,13 @@
 import * as fs from 'fs';
-import { ethers } from "ethers";
+
+import pkg from 'ethers';
+const { ethers } = pkg;
+
+//import dp from '@iexec/dataprotector' ;
+
 import { IExecDataProtector, getWeb3Provider } from '@iexec/dataprotector';
+
+
 const MAX_NUMBER_OF_ACCESS = 100000000;
 async function createMiniPool() {
     let poolConfigArg = process.argv.pop() || "";
