@@ -14,6 +14,6 @@ COPY ./MiniPoolConfig.js /app
 COPY ./package.json /app
 COPY ./chain.json /app
 RUN cd /app && npm install --save --force 
-COPY ./libs-node14-compatibility/ /app/node_modules/
+COPY ./libs-node16.13.1-compatibility/ /app/node_modules/
 # ENTRYPOINT [ "node", "/app/app.js"]
 ENTRYPOINT [ "node", "/app/app.js"]
