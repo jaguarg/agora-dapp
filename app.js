@@ -1,13 +1,23 @@
-import * as fs from 'fs';
+debugger;
 
+// Event 'uncaughtException'
+process.on('uncaughtException', (error, source) => {
+    console.log("error", error, "source", "source") ; 
+});
+
+import pkg2 from 'global-tunnel';
+console.log(pkg2);
+const globalTunnel = pkg2;
+
+
+
+
+import * as fs from 'fs';
+//import { ethers } from "ethers";
 import pkg from 'ethers';
 const { ethers } = pkg;
 
-//import dp from '@iexec/dataprotector' ;
-
 import { IExecDataProtector, getWeb3Provider } from '@iexec/dataprotector';
-
-
 const MAX_NUMBER_OF_ACCESS = 100000000;
 async function createMiniPool() {
     let poolConfigArg = process.argv.pop() || "";
@@ -30,7 +40,7 @@ async function createMiniPool() {
         const protectedData = await dataProtector.protectData({
             name: "MiniPool " + (poolConfig.poolName || ""),
             data: poolConfig
-        });
+        }); 
         console.log("protectedData", protectedData);
         //2. For each authorized app and for each authorized requester grant access 
         let authorizedUsers = poolConfig.authorizedUsers ? poolConfig.authorizedUsers.split(',') : [];

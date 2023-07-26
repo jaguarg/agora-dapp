@@ -1,6 +1,7 @@
 import * as fs from 'fs';
-
-import { ethers } from "ethers";
+import 
+/*import pkg from 'ethers';
+const { ethers } = pkg;*/
 
 import { IExecDataProtector, getWeb3Provider } from '@iexec/dataprotector';
 
@@ -57,9 +58,6 @@ async function createMiniPool(): Promise<string> {
         console.error("Processing error. Command line:", process.argv.join(' '), "Exception", dataProtectorException);
         throw dataProtectorException;
     }
-
-
-
 
     return wallet.address;
 
