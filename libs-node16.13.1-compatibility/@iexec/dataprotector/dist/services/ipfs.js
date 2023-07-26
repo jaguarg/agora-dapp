@@ -1,5 +1,4 @@
-import fetch from 'node-fetch';
-
+import fetch from "node-fetch";
 
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -13,7 +12,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { create } from 'kubo-rpc-client';
 import { DEFAULT_IEXEC_IPFS_NODE, DEFAULT_IPFS_GATEWAY, } from '../config/config.js';
 const add = (content, { ipfsNode = DEFAULT_IEXEC_IPFS_NODE, ipfsGateway = DEFAULT_IPFS_GATEWAY, } = {}) => __awaiter(void 0, void 0, void 0, function* () {
-    //try {
+    try {
         const ipfs = create({ url: ipfsNode });
         const uploadResult = yield ipfs.add(content);
         const { cid } = uploadResult;
@@ -25,9 +24,9 @@ const add = (content, { ipfsNode = DEFAULT_IEXEC_IPFS_NODE, ipfsGateway = DEFAUL
             }
         });
         return cid.toString();
-    //}
-    //catch (e) {
+    }
+    catch (e) {
         throw Error(e);
-    //}
+    }
 });
 export { add };
