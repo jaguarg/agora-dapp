@@ -23,8 +23,9 @@
   },
   "homepage": "https://github.com/jaguarg/agora-dapp#readme",
   "dependencies": {
-    "@iexec/dataprotector": "^0.1.1-nightly-39c70d6ed67ca78afc10185ff839f0fbdcf77100",
+    "@iexec/dataprotector": "^0.1.1",
     "global-tunnel": "^1.2.0",
+    "graphql": "^16.7.1",
     "node-fetch": "^3.3.2",
     "nvm": "^0.0.4"
   },

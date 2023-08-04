@@ -1,23 +1,23 @@
-debugger;
+//debugger;
 
 // Event 'uncaughtException'
-process.on('uncaughtException', (error, source) => {
-    console.log("error", error, "source", "source") ; 
-});
+//process.on('uncaughtException', (error, source) => {
+//    console.log("error", error, "source", "source") ; 
+//});
 
-import pkg2 from 'global-tunnel';
+/*import pkg2 from 'global-tunnel';
 console.log(pkg2);
 const globalTunnel = pkg2;
-
-
-
+*/
 
 import * as fs from 'fs';
 //import { ethers } from "ethers";
 import pkg from 'ethers';
 const { ethers } = pkg;
 
-import { IExecDataProtector, getWeb3Provider } from '@iexec/dataprotector';
+import { IExecDataProtector, getWeb3Provider } from './node_modules/@iexec/dataprotector/dist/index.js';
+
+/*
 const MAX_NUMBER_OF_ACCESS = 100000000;
 async function createMiniPool() {
     let poolConfigArg = process.argv.pop() || "";
@@ -83,3 +83,4 @@ async function writeResult(secretWalletAddress) {
     }
     // `text` is not available here
 })();
+*/
