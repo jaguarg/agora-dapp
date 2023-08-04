@@ -18,7 +18,7 @@ docker pull registry.scontain.com:5050/sconecuratedimages/node:16.13.1-alpine3.1
 # run the sconifier to build the TEE image based on the non-TEE image
 docker run -it --rm \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com/scone-debug/iexec-sconify-image-unlocked:5.8.0 \
+            registry.scontain.com/scone-production/iexec-sconify-image:5.3.15-v12 \
             sconify_iexec \
             --env SCONE_PWD=/app  \
             --name=${IMG_NAME} \
