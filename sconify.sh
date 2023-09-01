@@ -5,7 +5,7 @@ ENTRYPOINT="node /app/app.js"
 
 # declare an image name
 IMG_NAME=minipool
-VER="0.1.38" 
+VER="0.1.39" 
 IMG_FROM=${IMG_NAME}:${VER}-temp-non-tee
 IMG_TO=${IMG_NAME}:${VER}-tee-debug
 
@@ -18,7 +18,7 @@ docker pull registry.scontain.com:5050/sconecuratedimages/node:16.13.1-alpine3.1
 # run the sconifier to build the TEE image based on the non-TEE image
 docker run -it --rm \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com/scone-production/iexec-sconify-image:5.3.15-v12 \
+            registry.scontain.com/sconecuratedimages/iexec-sconify-image:5.9.0-rc-m1602 \
             sconify_iexec \
             --env SCONE_PWD=/app  \
             --name=${IMG_NAME} \
