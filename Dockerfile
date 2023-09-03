@@ -1,6 +1,6 @@
 # Starting from a base image supported by SCONE  
-# FROM node:16.13.1-alpine3.15
-FROM node:15.14.0-alpine3.13
+FROM node:16.13.1-alpine3.15
+# FROM node:15.14.0-alpine3.13
 
 RUN node --version
 
