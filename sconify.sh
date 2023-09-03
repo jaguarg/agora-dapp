@@ -5,7 +5,7 @@ ENTRYPOINT="node /app/app.js"
 
 # declare an image name
 IMG_NAME=minipool
-VER="0.1.39" 
+VER="0.1.40" 
 IMG_FROM=${IMG_NAME}:${VER}-temp-non-tee
 IMG_TO=${IMG_NAME}:${VER}-tee-debug
 
@@ -30,7 +30,7 @@ docker run -it --rm \
             --host-path=/etc/resolv.conf \
             --binary=/usr/local/bin/node \
             --heap=1G \
-            --dlopen=2 \
+            --dlopen=1 \
             --no-color \
             --verbose \
             --command=${ENTRYPOINT} \
